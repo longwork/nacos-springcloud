@@ -10,11 +10,11 @@ import java.util.Scanner;
  */
 public class Java4873279 {
     public static void main(String[] args) {
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>(100);
         Scanner cin = new Scanner(System.in);
-        int N = cin.nextInt();
-        for (int i = 0; i < N; i++) {
-            StringBuilder Sb = new StringBuilder();
+        int n = cin.nextInt();
+        for (int i = 0; i < n; i++) {
+            StringBuilder sb = new StringBuilder();
             String s = cin.next();
             int len = s.length();
             for (int j = 0; j < len; j++) {
@@ -26,10 +26,10 @@ public class Java4873279 {
                     } else {
                         nul = getNum(c);
                     }
-                    Sb.append(nul);
+                    sb.append(nul);
                 }
             }
-            String key = Sb.toString();
+            String key = sb.toString();
             if (map.containsKey(key)) {
                 map.put(key, map.get(key) + 1);
             } else {
@@ -52,19 +52,23 @@ public class Java4873279 {
     }
 
     private static int getNum(char c) {
-        if (c == 'A' || c == 'B' || c == 'C') {
+        char a1 = 'A', c1 = 'C', d1 = 'D', f1 = 'F';
+        char g1 = 'G', i1 = 'I', j1 = 'J', l1 = 'L';
+        char m1 = 'M', o1 = 'O', p1 = 'P', s1 = 'S';
+        char t1 = 'T', v1 = 'V';
+        if (c >= a1 && c <= c1) {
             return 2;
-        } else if (c == 'D' || c == 'E' || c == 'F') {
+        } else if (c >= d1 && c <= f1) {
             return 3;
-        } else if (c == 'G' || c == 'H' || c == 'I') {
+        } else if (c >= g1 && c <= i1) {
             return 4;
-        } else if (c == 'J' || c == 'K' || c == 'L') {
+        } else if (c >= j1 && c <= l1) {
             return 5;
-        } else if (c == 'M' || c == 'N' || c == 'O') {
+        } else if (c >= m1 && c <= o1) {
             return 6;
-        } else if (c == 'P' || c == 'R' || c == 'S') {
+        } else if (c >= p1 && c <= s1) {
             return 7;
-        } else if (c == 'T' || c == 'U' || c == 'V') {
+        } else if (c >= t1 && c <= v1) {
             return 8;
         } else {
             return 9;
