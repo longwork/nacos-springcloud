@@ -41,11 +41,24 @@ public class ParenthesisMatching1583 {
                 stack.push(s);
             } else {
                 String pop = stack.pop();
-                if (!pop.equals(s)) {
+                String traction = traction(pop);
+                if (!traction.equals(s)) {
                     return false;
                 }
             }
         }
         return true;
+    }
+
+    private static String traction(String str) {
+        String s1 = "{";
+        String s2 = "(";
+        if (s1.equals(str)) {
+            return "}";
+        } else if (s2.equals(str)) {
+            return ")";
+        } else {
+            return "]";
+        }
     }
 }
