@@ -1,4 +1,4 @@
-package wimi.nacosspring;
+package wimi.nacos.springboot;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
