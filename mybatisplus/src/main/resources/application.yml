@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  datasource:
+    password: long09060124
+    username: wenchao
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://connection.mysql.rds.aliyuncs.com:3306/nacos_design?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC
+# mybatis-plus配置控制台打印完整带参数SQL语句
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
