@@ -9,6 +9,9 @@ import java.util.Scanner;
  */
 public class IdCardSort {
     public static void main(String[] args) {
+        Runtime r = Runtime.getRuntime();
+        r.gc();
+        long startMem = r.freeMemory();
         Scanner cin = new Scanner(System.in);
         int n = cin.nextInt();
         List<String> list = new ArrayList<>(n);
@@ -23,6 +26,8 @@ public class IdCardSort {
             return -o1.compareTo(o2);
         });
         list.forEach(System.out::println);
+        long orz = r.freeMemory();
+        System.out.println((startMem - orz) / 1048576.0);
         cin.close();
     }
 }

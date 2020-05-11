@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: long
+    password: 0906
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.56.83.118:3306/nacos_design?useUnicode=true&charaterEncoding=utf-8&serverTimezone=UTC
