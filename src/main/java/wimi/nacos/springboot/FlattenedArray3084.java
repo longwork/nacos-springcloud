@@ -3,6 +3,7 @@ package wimi.nacos.springboot;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * @author : wenchao.long
@@ -27,9 +28,10 @@ public class FlattenedArray3084 {
     }
 
     private static void sortList(List<String> numList) {
-        numList.sort((o1, o2) -> (o1 + o2).compareTo(o2 + o1));
-        StringBuilder sb = new StringBuilder();
-        numList.forEach(sb::append);
-        System.out.println(sb);
+        System.out.println(
+                numList.stream()
+                        .sorted((o1, o2) -> (o1 + o2).compareTo(o2 + o1))
+                        .collect(Collectors.joining())
+        );
     }
 }

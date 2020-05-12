@@ -21,7 +21,6 @@ public class CountWords1727 {
     }
 
     private static void countWords(String str) {
-        //TODO
         str = str.trim();
         String[] split = str.split(REGEX);
         Map<String, Integer> map = new HashMap<>(split.length);
