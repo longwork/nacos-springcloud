@@ -1,5 +1,6 @@
 package wimi.nacos.springboot;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -9,24 +10,26 @@ import java.util.Scanner;
 public class LeftmostDigit1237 {
     private static final Scanner CIN = new Scanner(System.in);
 
+    private static final int MOD = 10;
+
     public static void main(String[] args) {
         int t = CIN.nextInt();
         while (t-- > 0) {
             int n = CIN.nextInt();
-            int tot;
-            if (n > 10) {
-                tot = n / 10;
-            } else {
-                tot = n;
-            }
-            int temp = 1;
-            for (int i = 0; i < n; i++) {
-                temp = temp * tot;
-                if (temp > 100) {
-                    temp = temp / 100;
-                }
-            }
-            System.out.println(temp >= 10 ? temp / 10 : temp);
+            leftDigit(n);
         }
+    }
+
+    private static void leftDigit(int n) {
+        if (n % MOD == 0) {
+            System.out.println(1);
+            return;
+        }
+        BigInteger bigInteger = new BigInteger("1");
+        BigInteger nBig = new BigInteger(String.valueOf(n));
+        for (int i = 0; i < n; i++) {
+            bigInteger = bigInteger.multiply(nBig);
+        }
+        System.out.println(bigInteger.toString().substring(0, 1));
     }
 }
